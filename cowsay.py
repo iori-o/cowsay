@@ -6,17 +6,18 @@ import textwrap
 
 def savanna():
   return u"""
-
-  　ノ从从从从ヽ
-  (⌒／ﾞﾞﾞﾞﾞﾞﾞﾞ＼⌒)
-　ノｲ ＿　　＿ ｜ヽ
-　彡|ヽ･〉〈･ﾉ ｜ミ
-　彡|　　▼　　 ｜ミ
-　彡ヽ ＿人＿  / ミ
-`／ヾヽ `⌒′/ ツ＼
-｜　ヾ ﾞﾞﾞﾞﾞﾞ ツ｜
-｜　| ヾ从从
-  """
+     \\
+      \\
+    　　ノ从从从从ヽ
+    　(⌒／ﾞﾞﾞﾞﾞﾞﾞﾞ＼⌒)
+    　ノｲ ＿　　＿ ｜ヽ
+    　彡|ヽ･〉〈･ﾉ ｜ミ
+    　彡|　　▼　　 ｜ミ
+    　彡ヽ ＿人＿  / ミ
+    `／ヾヽ `⌒′/ ツ ＼
+    ｜　ヾ ﾞﾞﾞﾞﾞﾞ/   ｜
+    ｜　| ヾ从从/     |
+"""
 
 def say(serif, length=40):
   return build_balloon(serif, length) + savanna()
@@ -38,7 +39,7 @@ def build_balloon(serif, length=40):
     return "\n".join(balloon)
 
 def calculate_bordersize(line):
-  return len(line * 2) if isinstance(line, unicode) else len(line)
+  return len(line * 2) + 1 if isinstance(line, unicode) else len(line)
 
 def normalize_text(str, length):
     lines  = textwrap.wrap(str, length)
